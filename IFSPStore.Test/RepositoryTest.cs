@@ -1,6 +1,5 @@
 ﻿using IFSPStore.Domain.Entities;
 using IFSPStore.Repository.Context;
-using System.Diagnostics;
 using System.Text.Json;
 
 namespace IFSPStore.Test

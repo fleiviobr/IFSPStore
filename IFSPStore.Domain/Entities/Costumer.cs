@@ -2,14 +2,14 @@
 
 namespace IFSPStore.Domain.Entities
 {
-    public class Customer : BaseEntity<int>
+    public class Costumer : BaseEntity<int>
     {
 
-        public Customer() : base(0)
+        public Costumer() : base(0)
         {
         }
 
-        public Customer(int id, string name, string address, string document, string district, City city) : base(id)
+        public Costumer(int id, string name, string address, string document, string district, City city) : base(id)
         {
             Name = name;
             Address = address;

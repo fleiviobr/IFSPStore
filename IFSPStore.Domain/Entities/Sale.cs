@@ -9,18 +9,18 @@ namespace IFSPStore.Domain.Entities
         {
             SaleItems = new List<SaleItem>();
         }
-        public Sale(int id, DateTime saleDate, float saleTotal, User salesman, Customer customer) : base(id)
+        public Sale(int id, DateTime saleDate, float saleTotal, User salesman, Costumer customer) : base(id)
         {
             SaleDate = saleDate;
             SaleTotal = saleTotal;
             Salesman = salesman;
-            Customer = customer;
+            Costomer = customer;
             SaleItems = new List<SaleItem>();
         }
         public DateTime SaleDate { get; set; }
         public float SaleTotal { get; set; }
         public User Salesman { get; set; }
-        public Customer Customer { get; set; }
+        public Costumer Costomer { get; set; }
         public List<SaleItem> SaleItems { get; set; }
 
     }
