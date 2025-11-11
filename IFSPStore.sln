@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFSPStore.Repository", "IFS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFSPStore.Test", "IFSPStore.Test\IFSPStore.Test.csproj", "{E077C3F2-9799-4991-BCB9-B2600F5773CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFSPStore.Service", "IFSPStore.Service\IFSPStore.Service.csproj", "{2C44C876-FB6E-4835-924F-0B4AA3127F2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFSPStore.App", "IFSPStore.App\IFSPStore.App.csproj", "{D8815B75-C92A-4B1D-96FE-75603A65DC2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E077C3F2-9799-4991-BCB9-B2600F5773CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E077C3F2-9799-4991-BCB9-B2600F5773CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E077C3F2-9799-4991-BCB9-B2600F5773CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C44C876-FB6E-4835-924F-0B4AA3127F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C44C876-FB6E-4835-924F-0B4AA3127F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C44C876-FB6E-4835-924F-0B4AA3127F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C44C876-FB6E-4835-924F-0B4AA3127F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8815B75-C92A-4B1D-96FE-75603A65DC2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8815B75-C92A-4B1D-96FE-75603A65DC2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8815B75-C92A-4B1D-96FE-75603A65DC2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8815B75-C92A-4B1D-96FE-75603A65DC2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

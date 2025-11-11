@@ -6,9 +6,9 @@ namespace IFSPStore.Repository.Context
 {
     public class IFSPStoreContext : DbContext
     {
-        public IFSPStoreContext() : base()
+        public IFSPStoreContext(DbContextOptions<IFSPStoreContext>? op=null) : base()
         {
-            //Database.EnsureCreated();
+            Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -23,7 +23,6 @@ namespace IFSPStore.Repository.Context
         public DbSet<Costumer> Customers { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<SaleItem> SalesItems { get; set; }
-        public DbSet<Banana> Banana { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,7 +34,6 @@ namespace IFSPStore.Repository.Context
             modelBuilder.Entity<SaleItem>(new SaleItemMap().Configure);
             modelBuilder.Entity<City>(new CityMap().Configure);
             modelBuilder.Entity<Costumer>(new CostumerMap().Configure);
-            modelBuilder.Entity<Banana>(new BananaMap().Configure);
         }
     }
 }
