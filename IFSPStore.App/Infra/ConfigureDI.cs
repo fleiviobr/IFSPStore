@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using IFSPStore.App.Register;
+using IFSPStore.App.ViewModel;
 using IFSPStore.Domain.Base;
 using IFSPStore.Domain.Entities;
 using IFSPStore.Repository.Context;
@@ -12,9 +14,9 @@ namespace IFSPStore.App.Infra
 {
     public static class ConfigureDI
     {
-        private static ServiceCollection services;
-        private static IServiceProvider? serviceProvider;
-        public static ServiceProvider ConfigureServices()
+        public static ServiceCollection services;
+        public static IServiceProvider? serviceProvider;
+        public static void ConfigureServices()
         {
             //Database config
             var dbConfigFile = "Config/DBConfig.txt";
@@ -29,8 +31,14 @@ namespace IFSPStore.App.Infra
                 );
             services.AddScoped<IBaseRepository<Category>, BaseRepository<Category>>();
             services.AddScoped<IBaseService<Category>, BaseService<Category>>();
-            services.AddSingleton(new MapperConfiguration(config => { config.CreateMap<Category, Category>(); }, NullLoggerFactory.Instance).CreateMapper());
-            return services.BuildServiceProvider();
+            services.AddScoped<CategoryForm, CategoryForm>();
+
+            services.AddSingleton(
+                new MapperConfiguration(
+                    config => { config.CreateMap<Category, CategoryViewModel>(); },
+                    NullLoggerFactory.Instance).CreateMapper());
+            
+            serviceProvider  = services.BuildServiceProvider();
         }
     }
 }

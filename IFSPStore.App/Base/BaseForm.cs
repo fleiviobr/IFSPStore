@@ -31,6 +31,7 @@ namespace IFSPStore.App.Base
         private void btnSave_Click(object sender, EventArgs e)
         {
             Save();
+            tabControlRegister.SelectedIndex = 1;
         }
         private void btnNew_Click(object sender, EventArgs e)
         {

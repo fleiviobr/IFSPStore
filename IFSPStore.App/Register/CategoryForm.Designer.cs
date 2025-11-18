@@ -36,13 +36,13 @@
             // 
             // tabControlRegister
             // 
-            tabControlRegister.Size = new Size(794, 383);
+            tabControlRegister.Size = new Size(794, 236);
             // 
             // tabPageRegister
             // 
             tabPageRegister.Controls.Add(txtId);
             tabPageRegister.Controls.Add(txtName);
-            tabPageRegister.Size = new Size(786, 348);
+            tabPageRegister.Size = new Size(786, 201);
             tabPageRegister.Controls.SetChildIndex(txtName, 0);
             tabPageRegister.Controls.SetChildIndex(txtId, 0);
             // 
@@ -112,13 +112,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 303);
             Location = new Point(0, 0);
             Name = "CategoryForm";
             Text = "Category Register";
             tabControlRegister.ResumeLayout(false);
             tabPageRegister.ResumeLayout(false);
-            tabPageRegister.PerformLayout();
             ResumeLayout(false);
         }
 
