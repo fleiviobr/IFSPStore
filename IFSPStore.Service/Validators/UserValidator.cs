@@ -15,7 +15,7 @@ namespace IFSPStore.Service.Validators
                 .MaximumLength(50).WithMessage("Login não pode ultrapassar 50 caracteres.");
             RuleFor(user => user.Password)
                 .NotEmpty().WithMessage("Senha é obrigatório.")
-                .MinimumLength(6).WithMessage("Senha must be at least 6 caracteres long.");
+                .MinimumLength(5).WithMessage("Senha must be at least 5 caracteres long.");
             RuleFor(user => user.Email)
                 .NotEmpty().WithMessage("Email é obrigatório.")
                 .EmailAddress().WithMessage("Email é invalido.");

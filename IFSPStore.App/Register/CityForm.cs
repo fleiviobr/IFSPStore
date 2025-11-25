@@ -1,45 +1,48 @@
-﻿using IFSPStore.App.ViewModel;
+﻿using IFSPStore.App.Base;
+using IFSPStore.App.ViewModel;
 using IFSPStore.Domain.Base;
 using IFSPStore.Domain.Entities;
 using IFSPStore.Service.Validators;
 
 namespace IFSPStore.App.Register
 {
-    public partial class CategoryForm : Base.BaseForm
+    public partial class CityForm : BaseForm
     {
-        private IBaseService<Category> _categoryService;
-        private List<CategoryViewModel>? categories;
-        public CategoryForm(IBaseService<Category> categoryService)
+        private IBaseService<City> _cityService;
+        private List<CityViewModel>? cities;
+        public CityForm(IBaseService<City> cityService)
         {
-            _categoryService = categoryService;
+            _cityService = cityService;
             InitializeComponent();
         }
 
-        private void FormToObject(Category category)
+        private void FormToObject(City city)
         {
-            category.Name = txtName.Text;
+            city.Name = txtName.Text;
+            city.State = txtState.Text;
         }
         protected override void Save()
         {
             try
             {
-                if (IsEditMode){
+                if (IsEditMode)
+                {
                     int.TryParse(txtId.Text, out int id);
-                    var category = _categoryService.GetById<Category>(id);
-                    FormToObject(category);
-                    category = _categoryService.Update<Category, Category, CategoryValidator>(category);
+                    var city = _cityService.GetById<City>(id);
+                    FormToObject(city);
+                    city = _cityService.Update<City, City, CityValidator>(city);
                 }
                 else
                 {
-                    var category = new Category();
-                    FormToObject(category);
-                    _categoryService.Add<Category, Category, CategoryValidator>(category);
+                    var city = new City();
+                    FormToObject(city);
+                    _cityService.Add<City, City, CityValidator>(city);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, 
-                                @"IFSP Store", MessageBoxButtons.OK, 
+                MessageBox.Show(ex.Message,
+                                @"IFSP Store", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
         }
@@ -48,7 +51,7 @@ namespace IFSPStore.App.Register
         {
             try
             {
-                _categoryService.Delete(id);
+                _cityService.Delete(id);
             }
             catch (Exception ex)
             {
@@ -60,8 +63,8 @@ namespace IFSPStore.App.Register
 
         protected override void PopulateGrid()
         {
-           categories = _categoryService.Get<CategoryViewModel>().ToList();
-            dataGridViewList.DataSource = categories;
+            cities = _cityService.Get<CityViewModel>().ToList();
+            dataGridViewList.DataSource = cities;
             dataGridViewList.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
@@ -69,6 +72,7 @@ namespace IFSPStore.App.Register
         {
             txtId.Text = record.Cells["Id"].Value.ToString();
             txtName.Text = record.Cells["Name"].Value.ToString();
+            txtState.Text = record.Cells["State"].Value.ToString();
         }
     }
 }
