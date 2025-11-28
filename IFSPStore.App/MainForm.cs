@@ -14,6 +14,7 @@ namespace IFSPStore.App
         {
             InitializeComponent();
             LoadLogin();
+            FormClosing += FormPrincipal_FormClosing;
         }
 
         private void LoadLogin()
@@ -75,6 +76,14 @@ namespace IFSPStore.App
         private void saleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormLoad<SaleForm>();
+        }
+
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.ApplicationExitCall)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

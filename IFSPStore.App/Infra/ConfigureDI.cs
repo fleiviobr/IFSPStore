@@ -49,12 +49,12 @@ namespace IFSPStore.App.Infra
             services.AddScoped<IBaseService<User>, BaseService<User>>();
 
             services.AddTransient<LoginForm, LoginForm>();
-            services.AddScoped<CategoryForm, CategoryForm>();
-            services.AddScoped<CityForm, CityForm>();
-            services.AddScoped<CostumerForm, CostumerForm>();
-            services.AddScoped<ProductForm, ProductForm>();
-            services.AddScoped<SaleForm, SaleForm>();
-            services.AddScoped<UserForm, UserForm>();
+            services.AddTransient<CategoryForm, CategoryForm>();
+            services.AddTransient<CityForm, CityForm>();
+            services.AddTransient<CostumerForm, CostumerForm>();
+            services.AddTransient<ProductForm, ProductForm>();
+            services.AddTransient<SaleForm, SaleForm>();
+            services.AddTransient<UserForm, UserForm>();
 
             services.AddSingleton(new MapperConfiguration(config => 
             {
