@@ -7,7 +7,7 @@ namespace IFSPStore.Service.Validators
     {
         public SaleValidator() 
         {
-            RuleFor(sale => sale.Costomer)
+            RuleFor(sale => sale.Customer)
                 .NotNull().WithMessage("Cliente é obrigatório.");
             RuleFor(sale => sale.SaleItems)
                 .NotNull().WithMessage("Venda deve conter itens.")

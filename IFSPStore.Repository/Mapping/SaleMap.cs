@@ -17,7 +17,7 @@ namespace IFSPStore.Repository.Mapping
             builder.HasOne(prop => prop.Salesman)
                 .WithMany()
                 .OnDelete(DeleteBehavior.Cascade);
-            builder.HasOne(prop => prop.Costomer)
+            builder.HasOne(prop => prop.Customer)
                 .WithMany()
                 .OnDelete(DeleteBehavior.Cascade);
             builder.HasMany(prop => prop.SaleItems)

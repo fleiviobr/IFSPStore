@@ -3,9 +3,9 @@ using IFSPStore.Domain.Entities;
 
 namespace IFSPStore.Service.Validators
 {
-    public class CostumerValidator : AbstractValidator<Costumer>
+    public class CustomerValidator : AbstractValidator<Customer>
     {
-        public CostumerValidator()
+        public CustomerValidator()
         {
             RuleFor(c => c.Name)
                 .NotEmpty().WithMessage("Nome é obrigatório.")

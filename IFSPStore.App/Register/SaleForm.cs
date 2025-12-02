@@ -13,11 +13,11 @@ namespace IFSPStore.App.Register
         private List<SaleItemViewModel> _saleItems;
         private readonly IBaseService<Sale> _saleService;
         private readonly IBaseService<User> _userService;
-        private readonly IBaseService<Costumer> _customerService;
+        private readonly IBaseService<Customer> _customerService;
         private readonly IBaseService<Product> _productService;
         private List<SaleViewModel>? sales;
 
-        public SaleForm(IBaseService<Sale> saleService, IBaseService<User> userService, IBaseService<Costumer> customerService, IBaseService<Product> productService)
+        public SaleForm(IBaseService<Sale> saleService, IBaseService<User> userService, IBaseService<Customer> customerService, IBaseService<Product> productService)
         {
             _saleService = saleService;
             _userService = userService;
@@ -38,7 +38,7 @@ namespace IFSPStore.App.Register
 
             txtCustomer.ValueMember = "Id";
             txtCustomer.DisplayMember = "Name";
-            txtCustomer.DataSource = _customerService.Get<Costumer>().ToList();
+            txtCustomer.DataSource = _customerService.Get<Customer>().ToList();
 
             txtProduct.ValueMember = "Id";
             txtProduct.DisplayMember = "Name";
@@ -55,10 +55,10 @@ namespace IFSPStore.App.Register
                 sale.Salesman = user;
             }
 
-            if (int.TryParse(txtCustomer.SelectedValue!.ToString(), out var idCostumer))
+            if (int.TryParse(txtCustomer.SelectedValue!.ToString(), out var idCustomer))
             {
-                var customer = _customerService.GetById<Costumer>(idCostumer);
-                sale.Costomer = customer;
+                var customer = _customerService.GetById<Customer>(idCustomer);
+                sale.Customer = customer;
             }
             sale.SaleTotal = _saleItems.Sum(x => x.TotalPrice);
 
@@ -128,7 +128,7 @@ namespace IFSPStore.App.Register
 
         protected override void PopulateGrid()
         {
-            var includes = new List<string>() {"Costomer", "Salesman" };
+            var includes = new List<string>() {"Customer", "Salesman" };
             sales = _saleService.Get<SaleViewModel>(includes).ToList();
             dataGridViewList.DataSource = sales;
             dataGridViewList.Columns["IdSalesman"]!.Visible = false;
@@ -147,7 +147,7 @@ namespace IFSPStore.App.Register
                ? dataC.ToString("g")
                : "";
 
-            var includes = new List<string>() { "Costumer", "User", "Items", "Items.Product" };
+            var includes = new List<string>() { "Customer", "User", "Items", "Items.Product" };
             var sale = _saleService.GetById<Sale>(id);
             _saleItems = new List<SaleItemViewModel>();
             foreach (var item in sale.SaleItems)

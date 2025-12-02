@@ -33,7 +33,7 @@ namespace IFSPStore.App.Infra
                 );
             services.AddScoped<IBaseRepository<Category>, BaseRepository<Category>>();
             services.AddScoped<IBaseRepository<City>, BaseRepository<City>>();
-            services.AddScoped<IBaseRepository<Costumer>, BaseRepository<Costumer>>();
+            services.AddScoped<IBaseRepository<Customer>, BaseRepository<Customer>>();
             services.AddScoped<IBaseRepository<Product>, BaseRepository<Product>>();
             services.AddScoped<IBaseRepository<Sale>, BaseRepository<Sale>>();
             services.AddScoped<IBaseRepository<SaleItem>, BaseRepository<SaleItem>>();
@@ -42,7 +42,7 @@ namespace IFSPStore.App.Infra
 
             services.AddScoped<IBaseService<Category>, BaseService<Category>>();
             services.AddScoped<IBaseService<City>, BaseService<City>>();
-            services.AddScoped<IBaseService<Costumer>, BaseService<Costumer>>();
+            services.AddScoped<IBaseService<Customer>, BaseService<Customer>>();
             services.AddScoped<IBaseService<Product>, BaseService<Product>>();
             services.AddScoped<IBaseService<Sale>, BaseService<Sale>>();
             services.AddScoped<IBaseService<SaleItem>, BaseService<SaleItem>>();
@@ -51,7 +51,7 @@ namespace IFSPStore.App.Infra
             services.AddTransient<LoginForm, LoginForm>();
             services.AddTransient<CategoryForm, CategoryForm>();
             services.AddTransient<CityForm, CityForm>();
-            services.AddTransient<CostumerForm, CostumerForm>();
+            services.AddTransient<CustomerForm, CustomerForm>();
             services.AddTransient<ProductForm, ProductForm>();
             services.AddTransient<SaleForm, SaleForm>();
             services.AddTransient<UserForm, UserForm>();
@@ -61,7 +61,7 @@ namespace IFSPStore.App.Infra
                 config.CreateMap<Category, CategoryViewModel>();
                 config.CreateMap<City, CityViewModel>()
                     .ForMember(d => d.NameState, d => d.MapFrom(src => $"{src.Name} - {src.State}"));
-                config.CreateMap<Costumer, CostumerViewModel>()
+                config.CreateMap<Customer, CustomerViewModel>()
                     .ForMember(d => d.City, d => d.MapFrom(src => $"{src.City.Name} - {src.City.State}"))
                     .ForMember(d => d.IdCity, d => d.MapFrom(src => src.City!.Id));
                 config.CreateMap<Product, ProductViewModel>()
@@ -70,8 +70,8 @@ namespace IFSPStore.App.Infra
                     .ForMember(d => d.PurchaseDate, d => d.MapFrom(src => $"{src.PurchaseDate}"));
                 config.CreateMap<User, UserViewModel>();
                 config.CreateMap<Sale, SaleViewModel>()
-                    .ForMember(d => d.IdCustomer, d => d.MapFrom(x => x.Costomer!.Id))
-                    .ForMember(d => d.Customer, d => d.MapFrom(x => x.Costomer!.Name))
+                    .ForMember(d => d.IdCustomer, d => d.MapFrom(x => x.Customer!.Id))
+                    .ForMember(d => d.Customer, d => d.MapFrom(x => x.Customer!.Name))
                     .ForMember(d => d.IdSalesman, d => d.MapFrom(x => x.Salesman!.Id))
                     .ForMember(d => d.Salesman, d => d.MapFrom(x => x.Salesman!.Name));
                 config.CreateMap<SaleItem, SaleItemViewModel>()

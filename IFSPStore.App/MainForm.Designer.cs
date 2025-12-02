@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ReaLTaiizor.ControlRenderer controlRenderer2 = new ReaLTaiizor.ControlRenderer();
-            ReaLTaiizor.MSColorTable msColorTable2 = new ReaLTaiizor.MSColorTable();
+            ReaLTaiizor.ControlRenderer controlRenderer1 = new ReaLTaiizor.ControlRenderer();
+            ReaLTaiizor.MSColorTable msColorTable1 = new ReaLTaiizor.MSColorTable();
             formMenuStrip = new ReaLTaiizor.Controls.FormMenuStrip();
             registerToolStripMenuItem = new ToolStripMenuItem();
             userToolStripMenuItem = new ToolStripMenuItem();
             categoryToolStripMenuItem = new ToolStripMenuItem();
             productToolStripMenuItem = new ToolStripMenuItem();
             cityToolStripMenuItem = new ToolStripMenuItem();
-            custumerToolStripMenuItem = new ToolStripMenuItem();
+            customerToolStripMenuItem = new ToolStripMenuItem();
             saleToolStripMenuItem = new ToolStripMenuItem();
             reportToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
@@ -51,16 +51,16 @@
             formMenuStrip.Items.AddRange(new ToolStripItem[] { registerToolStripMenuItem, reportToolStripMenuItem, helpToolStripMenuItem, closeToolStripMenuItem });
             formMenuStrip.Location = new Point(3, 64);
             formMenuStrip.Name = "formMenuStrip";
-            controlRenderer2.ColorTable = msColorTable2;
-            controlRenderer2.RoundedEdges = true;
-            formMenuStrip.Renderer = controlRenderer2;
+            controlRenderer1.ColorTable = msColorTable1;
+            controlRenderer1.RoundedEdges = true;
+            formMenuStrip.Renderer = controlRenderer1;
             formMenuStrip.Size = new Size(794, 28);
             formMenuStrip.TabIndex = 1;
             formMenuStrip.Text = "formMenuStrip1";
             // 
             // registerToolStripMenuItem
             // 
-            registerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { userToolStripMenuItem, categoryToolStripMenuItem, productToolStripMenuItem, cityToolStripMenuItem, custumerToolStripMenuItem, saleToolStripMenuItem });
+            registerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { userToolStripMenuItem, categoryToolStripMenuItem, productToolStripMenuItem, cityToolStripMenuItem, customerToolStripMenuItem, saleToolStripMenuItem });
             registerToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
             registerToolStripMenuItem.Name = "registerToolStripMenuItem";
             registerToolStripMenuItem.Size = new Size(77, 24);
@@ -70,7 +70,7 @@
             // 
             userToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
             userToolStripMenuItem.Name = "userToolStripMenuItem";
-            userToolStripMenuItem.Size = new Size(154, 26);
+            userToolStripMenuItem.Size = new Size(224, 26);
             userToolStripMenuItem.Text = "User";
             userToolStripMenuItem.Click += userToolStripMenuItem_Click;
             // 
@@ -78,7 +78,7 @@
             // 
             categoryToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
             categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            categoryToolStripMenuItem.Size = new Size(154, 26);
+            categoryToolStripMenuItem.Size = new Size(224, 26);
             categoryToolStripMenuItem.Text = "Category";
             categoryToolStripMenuItem.Click += categoryToolStripMenuItem_Click;
             // 
@@ -86,7 +86,7 @@
             // 
             productToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
             productToolStripMenuItem.Name = "productToolStripMenuItem";
-            productToolStripMenuItem.Size = new Size(154, 26);
+            productToolStripMenuItem.Size = new Size(224, 26);
             productToolStripMenuItem.Text = "Product";
             productToolStripMenuItem.Click += productToolStripMenuItem_Click;
             // 
@@ -94,23 +94,23 @@
             // 
             cityToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
             cityToolStripMenuItem.Name = "cityToolStripMenuItem";
-            cityToolStripMenuItem.Size = new Size(154, 26);
+            cityToolStripMenuItem.Size = new Size(224, 26);
             cityToolStripMenuItem.Text = "City";
             cityToolStripMenuItem.Click += cityToolStripMenuItem_Click;
             // 
-            // custumerToolStripMenuItem
+            // customerToolStripMenuItem
             // 
-            custumerToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
-            custumerToolStripMenuItem.Name = "custumerToolStripMenuItem";
-            custumerToolStripMenuItem.Size = new Size(154, 26);
-            custumerToolStripMenuItem.Text = "Custumer";
-            custumerToolStripMenuItem.Click += custumerToolStripMenuItem_Click;
+            customerToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
+            customerToolStripMenuItem.Name = "customerToolStripMenuItem";
+            customerToolStripMenuItem.Size = new Size(224, 26);
+            customerToolStripMenuItem.Text = "Customer";
+            customerToolStripMenuItem.Click += customerToolStripMenuItem_Click;
             // 
             // saleToolStripMenuItem
             // 
             saleToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
             saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            saleToolStripMenuItem.Size = new Size(154, 26);
+            saleToolStripMenuItem.Size = new Size(224, 26);
             saleToolStripMenuItem.Text = "Sale";
             saleToolStripMenuItem.Click += saleToolStripMenuItem_Click;
             // 
@@ -172,7 +172,7 @@
         private ToolStripMenuItem categoryToolStripMenuItem;
         private ToolStripMenuItem productToolStripMenuItem;
         private ToolStripMenuItem cityToolStripMenuItem;
-        private ToolStripMenuItem custumerToolStripMenuItem;
+        private ToolStripMenuItem customerToolStripMenuItem;
         private ToolStripMenuItem saleToolStripMenuItem;
         private ToolStripMenuItem reportToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;

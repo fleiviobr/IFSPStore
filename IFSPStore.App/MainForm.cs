@@ -58,9 +58,9 @@ namespace IFSPStore.App
             FormLoad<CityForm>();
         }
 
-        private void custumerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLoad<CostumerForm>();
+            FormLoad<CustomerForm>();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)

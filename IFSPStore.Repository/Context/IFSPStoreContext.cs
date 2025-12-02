@@ -20,7 +20,7 @@ namespace IFSPStore.Repository.Context
         public DbSet<User> Users { get; set; } 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Costumer> Customers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<SaleItem> SalesItems { get; set; }
 
@@ -33,7 +33,7 @@ namespace IFSPStore.Repository.Context
             modelBuilder.Entity<Sale>(new SaleMap().Configure);
             modelBuilder.Entity<SaleItem>(new SaleItemMap().Configure);
             modelBuilder.Entity<City>(new CityMap().Configure);
-            modelBuilder.Entity<Costumer>(new CostumerMap().Configure);
+            modelBuilder.Entity<Customer>(new CustomerMap().Configure);
         }
     }
 }

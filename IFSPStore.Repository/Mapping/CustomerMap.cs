@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace IFSPStore.Repository.Mapping
 {
-    public class CostumerMap : IEntityTypeConfiguration<Costumer>
+    public class CustomerMap : IEntityTypeConfiguration<Customer>
     {
-        public void Configure(EntityTypeBuilder<Costumer> builder)
+        public void Configure(EntityTypeBuilder<Customer> builder)
         {
-            builder.ToTable("Costumer");
+            builder.ToTable("Customer");
             builder.HasKey(prop => prop.Id);
             builder.Property(prop => prop.Name)
                 .IsRequired()

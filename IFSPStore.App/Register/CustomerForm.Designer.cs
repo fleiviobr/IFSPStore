@@ -1,6 +1,6 @@
 ﻿namespace IFSPStore.App.Register
 {
-    partial class CostumerForm
+    partial class CustomerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -236,14 +236,14 @@
             txtDistrict.TrailingIcon = null;
             txtDistrict.UseSystemPasswordChar = false;
             // 
-            // CostumerForm
+            // CustomerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 505);
             Location = new Point(0, 0);
-            Name = "CostumerForm";
-            Text = "CostumerForm";
+            Name = "CustomerForm";
+            Text = "CustomerForm";
             tabControlRegister.ResumeLayout(false);
             tabPageRegister.ResumeLayout(false);
             ResumeLayout(false);
